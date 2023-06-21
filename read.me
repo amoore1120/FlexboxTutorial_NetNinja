@@ -1,0 +1,747 @@
+/*      *** Intro ***     video 1     */
+- flexbox is a css display type designed to help us craft CSS layout easier
+
+- control the position, size, and spacing of elements relative to their parent elements and to each other
+
+- works great responsively
+
+- apply a display type of flex to the parent container (element). each item inside the parent element becomes a flex-item and are considered to children element.
+
+-benefits: 
+      - navigation bars & menus
+      - grid layouts  
+      - bar charts 
+      - equal height columns
+
+-cons
+      - not fully supported in all browsers ex. IE 
+      - need to provide fall-back options for those browsers not supported Ex. Modernizr
+      analyzes the webpage someone is viewing then will adjust classes to support that browser 
+
+
+
+
+Additional Info: 
+Flexbox, short for Flexible Box Layout, is a CSS layout module that provides a flexible way to arrange and align elements within a container. It offers a one-dimensional layout model, either in a horizontal row or a vertical column, allowing for efficient positioning and distribution of elements.
+
+The benefits of using flexbox include:
+
+1. **Responsive Design**: Flexbox is a powerful tool for creating responsive designs. It enables automatic resizing and repositioning of elements based on available space, making it easier to build layouts that adapt to different screen sizes and devices.
+
+2. **Flexible and Dynamic Layouts**: Flexbox provides flexibility in controlling the size and order of elements. It allows for dynamic resizing and distribution of space, ensuring that elements adjust proportionally as the container size changes.
+
+3. **Easy Alignment and Centering**: Flexbox offers straightforward alignment and centering options for both individual elements and entire groups of elements. It simplifies vertical and horizontal alignment, distribution of space, and control over spacing between elements.
+
+4. **Efficient Space Distribution**: Flexbox provides intelligent space distribution capabilities, allowing you to control how extra space is distributed among elements or how remaining space is handled when elements don't fill the entire container.
+
+5. **No Floats or Clearfixes**: Unlike traditional CSS layout methods that often require complex hacks like floats and clearfixes, flexbox provides a cleaner and more intuitive approach to layout, reducing the need for additional CSS workarounds.
+
+6. **Ordering and Reordering**: Flexbox allows you to easily change the visual order of elements without modifying the HTML structure. This makes it convenient for creating different layouts and reordering elements for different device orientations or user interactions.
+
+7. **Browser Support**: Flexbox has excellent browser support, including modern versions of major browsers. It is supported in IE 11 and above, making it widely compatible for most web development projects.
+
+Overall, flexbox simplifies the creation of flexible and responsive layouts, reduces the need for complex CSS hacks, and provides a more intuitive way to control the positioning and alignment of elements. It is a valuable tool for modern web development, enabling efficient and dynamic designs that adapt to different devices and screen sizes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*      *** flex containers ***     video 2     */
+
+make a container a flexboc by using display type: flex; to the class of the parent container, in this case it's the .flex-container 
+
+min-width or height = sets the smallest possible size
+
+
+Additional info:
+
+what are flex containers? parent element? child element? 
+
+In flexbox, there are two key concepts: flex containers and flex items.
+
+1. **Flex Containers (Parent Element)**: A flex container is an element that becomes a flex container by applying the CSS property `display: flex` or `display: inline-flex`. This property is applied to the parent element that contains one or more child elements. The flex container establishes a flex formatting context, which affects the layout and behavior of its child elements.
+
+2. **Flex Items (Child Elements)**: Flex items are the immediate child elements of a flex container. These elements are placed inside the flex container and are subject to flexbox layout rules. Flex items can be any HTML element, such as `<div>`, `<span>`, `<p>`, etc. Each flex item is laid out according to the flex properties applied to it.
+
+Here are some basic properties and behaviors related to flex containers and flex items:
+
+- **Flex Container Properties**:
+  - `display: flex` or `display: inline-flex`: Applied to the parent element to make it a flex container.
+  - `flex-direction`: Determines the main axis direction of the flex container, controlling how flex items are laid out. It can have values like `row`, `row-reverse`, `column`, or `column-reverse`.
+  - `justify-content`: Defines how flex items are aligned and spaced along the main axis.
+  - `align-items`: Specifies how flex items are aligned along the cross axis.
+  - `flex-wrap`: Determines whether flex items should wrap onto multiple lines or stay on a single line.
+  - `align-content`: Controls the alignment and spacing of flex lines when there are multiple lines in the flex container.
+
+- **Flex Item Properties**:
+  - `flex-grow`: Specifies how flex items grow to fill available space along the main axis.
+  - `flex-shrink`: Determines how flex items shrink when there is not enough space along the main axis.
+  - `flex-basis`: Defines the initial size of a flex item along the main axis before any remaining space is distributed.
+  - `flex`: A shorthand property that combines `flex-grow`, `flex-shrink`, and `flex-basis` in one declaration.
+  - `order`: Controls the visual order of flex items within the flex container.
+
+By using flex containers and flex items, you can create flexible and responsive layouts, control the positioning and alignment of elements, and achieve various design patterns with ease.
+
+
+
+MIN_WIDTH:
+The `min-width` property is used to set the minimum width of an element. It specifies the smallest width that an element should be allowed to shrink to. Here are some key points about the `min-width` property:
+
+- **Syntax**: `min-width: value;` (where `value` can be specified in pixels, percentage, em, rem, etc.)
+- **Value**: Any valid CSS length value or percentage. It represents the minimum width that the element should have.
+- **Inheritance**: The `min-width` property is not inherited and must be applied directly to the element.
+- **Applied to**: It can be applied to any block-level or replaced element, such as `<div>`, `<p>`, `<img>`, etc.
+
+When to use `min-width`:
+1. **Responsive Design**: One common use case is to ensure that an element maintains a minimum width on different screen sizes. By setting `min-width`, you can prevent an element from becoming too narrow and losing its usability or readability on smaller devices.
+
+2. **Preventing Content Overflow**: `min-width` can be used to avoid content overflow when the content inside an element expands or when the available space shrinks. By setting a minimum width, you can prevent the element from collapsing and causing horizontal scrolling.
+
+3. **Column Layouts**: `min-width` can be useful in creating column-based layouts, where you want to ensure that each column has a minimum width. This helps maintain a consistent layout and prevents columns from becoming too narrow, especially when using flexible units like percentages.
+
+It's important to note that `min-width` provides a minimum width for the current configuration, not specifically for mobile responsiveness. However, by setting a suitable `min-width`, you can ensure that your design remains functional and visually appealing across different devices and screen sizes.
+
+Remember to use `min-width` in conjunction with other responsive design techniques, such as media queries and fluid layouts, to create a fully responsive and adaptable design that caters to various devices and viewport sizes.
+
+
+
+
+MIN-HEIGHT: 
+similar principles apply to the `min-height` property as well. Here's the information regarding `min-height`:
+
+- **Syntax**: `min-height: value;` (where `value` can be specified in pixels, percentage, em, rem, etc.)
+- **Value**: Any valid CSS length value or percentage. It represents the minimum height that the element should have.
+- **Inheritance**: The `min-height` property is not inherited and must be applied directly to the element.
+- **Applied to**: It can be applied to any block-level or replaced element, such as `<div>`, `<p>`, `<img>`, etc.
+
+The purpose of `min-height` is to set a minimum height for an element, ensuring that it does not become smaller than the specified value. Here's when you might use `min-height`:
+
+1. **Preventing Content Clipping**: When the content inside an element expands vertically, `min-height` can be used to prevent the content from being clipped or cut off. It ensures that the element expands to accommodate its content, even if the content height exceeds the specified minimum height.
+
+2. **Column Layouts**: Similar to `min-width`, `min-height` can be useful in creating column-based layouts where you want to ensure that each column has a minimum height. This helps maintain a consistent layout and prevents columns from becoming too short.
+
+3. **Responsive Design**: By setting a suitable `min-height`, you can ensure that elements have a minimum height on different screen sizes, especially when dealing with dynamic or flexible content. It prevents elements from shrinking too much and losing their intended appearance or functionality.
+
+Just like `min-width`, `min-height` provides a minimum height for the current configuration, not specifically for mobile responsiveness. However, using `min-height` appropriately within a responsive design strategy can help ensure that your layout remains functional and visually appealing across various devices and screen sizes.
+
+
+The `max-width` and `max-height` properties are used to set the maximum width and height, respectively, of an element. Here's the information regarding these properties:
+
+- **Syntax**: 
+  - `max-width: value;` (where `value` can be specified in pixels, percentage, em, rem, etc.)
+  - `max-height: value;` (where `value` can be specified in pixels, percentage, em, rem, etc.)
+
+- **Value**: Any valid CSS length value or percentage. It represents the maximum width or height that the element should have.
+
+- **Inheritance**: The `max-width` and `max-height` properties are not inherited and must be applied directly to the element.
+
+- **Applied to**: They can be applied to any block-level or replaced element, such as `<div>`, `<p>`, `<img>`, etc.
+
+When to use `max-width` and `max-height`:
+
+1. **Responsive Design**: The primary use of `max-width` and `max-height` is to ensure that elements do not exceed a certain width or height on different screen sizes. By setting a maximum value, you can control the expansion of elements and prevent them from becoming too large, which could negatively impact the layout or readability.
+
+2. **Preventing Element Overflow**: `max-width` and `max-height` can be used to prevent content overflow within elements. By setting a maximum value, you can ensure that the content does not exceed the specified dimensions and is appropriately contained within the element.
+
+3. **Maintaining Aspect Ratio**: `max-width` and `max-height` can be useful when you want to maintain the aspect ratio of elements, such as images or videos, while also restricting their dimensions. By setting a maximum value on one dimension (width or height) and using appropriate sizing techniques (e.g., `auto` or `100%` on the other dimension), you can ensure that the element scales proportionally within the specified limits.
+
+
+**********  When it comes to choosing the measurement unit for responsiveness (`px`, `em`, `rem`, or `%`), here are some general guidelines:
+
+- `px`: Fixed pixel values provide a precise control over dimensions but are not inherently responsive. They can be useful when you want to define exact sizes for specific elements that do not need to adjust dynamically based on the viewport size.
+
+- `%`: Percentage values are relative to the parent container's size. They are commonly used for responsive design as they allow elements to scale proportionally based on the available space. Percentage values are particularly useful when you want elements to occupy a percentage of the parent container's width or height.
+
+- `em` and `rem`: These units are relative to the font-size of the element or the root (`html`) element, respectively. They can be helpful for creating fluid and scalable designs that adjust based on the user's preferred font size. However, when using `em` or `rem` for sizing, it's essential to consider their cascading nature and potential impact on other elements.
+
+Choosing the appropriate measurement unit depends on the specific requirements and design goals of your project. It's common to use a combination of different units to achieve responsive layouts, such as percentages for container widths and `em`/`rem` for text-related sizes.
+
+Ultimately, the best practice is to adopt a responsive design approach, utilizing a combination of flexible units, media queries, and layout techniques to create designs that adapt smoothly across various screen sizes and devices.
+
+
+
+
+
+
+
+
+
+
+/*      *** flex-grow ***  video 3     */
+
+When you set flex-grow: 1; on a flex item, it indicates that the item should consume any available space in proportion to other flex items in the same container. The value 1 represents the proportion or weight assigned to the item relative to other items.
+
+
+use min-width & or height with flex grow to allow elements to grow relative to one another. 
+
+ex: box 1 flex grow 2, box 2 & 3 flex grow 1
+
+
+
+In this example:
+
+height: 100px; sets the height of the .box elements to 100 pixels. This ensures that all boxes have a fixed height.
+
+min-width: 100px; sets the minimum width of the .box elements to 100 pixels. This property ensures that the boxes won't shrink below this width, even if there is limited available space.
+
+flex-grow: 1; assigns a flex-grow value of 1 to the .box elements. This means that each box will have an equal opportunity to grow and fill any available space within the flex container.
+
+By combining these properties, you're creating flexible boxes that have a fixed height but can grow horizontally to fill any available space in the container. The min-width property ensures that the boxes won't become too small, while flex-grow allows them to expand and distribute the available space equally.
+
+This approach is often used in responsive design scenarios where you want boxes to adapt to different screen sizes. By adjusting the min-width and flex-grow values, you can control the behavior of the boxes on smaller and larger screens, allowing them to fill the container proportionally based on the available space.
+
+
+
+
+
+
+Here are a few key points about flex-grow:
+
+The flex-grow property accepts numeric values, including fractions or decimals greater than or equal to zero. The default value is 0.
+A higher flex-grow value indicates that the flex item will grow more compared to other items within the same container.
+If all flex items have a flex-grow value of 1, they will evenly distribute the available space, taking up an equal portion of it.
+If one flex item has a flex-grow value of 2 and another has a value of 1, the first item will grow twice as much as the second item.
+By adjusting the flex-grow values of flex items, you can control their ability to grow and distribute available space within a flex container. This property is particularly useful for creating flexible and responsive layouts where the size of items needs to adapt based on the available space.
+
+Additional Info: 
+When using flexbox, the flex-grow property controls the ability of a flex item to grow and distribute extra space within the flex container. It accepts a numeric value as its argument.
+
+The different options for the flex-grow property are:
+
+Positive numeric values: You can assign a positive number to flex-grow to indicate the proportion in which the flex items should grow relative to each other. For example, if one item has flex-grow: 2 and another item has flex-grow: 1, the first item will grow twice as much as the second item when there is extra space available.
+
+Zero: Setting flex-grow to 0 (the default value) means the flex item will not grow, and any available extra space will be distributed to other items that have a positive flex-grow value.
+
+Negative values: Negative values for flex-grow are invalid and will have no effect.
+
+Here's an example that demonstrates the usage of flex-grow:
+
+.container {
+  display: flex;
+}
+
+.item1 {
+  flex-grow: 2;
+}
+
+.item2 {
+  flex-grow: 1;
+}
+
+.item3 {
+  flex-grow: 0;
+}
+
+In this example, item1 will grow twice as much as item2 because it has a flex-grow value of 2. item3 will not grow because its flex-grow value is set to 0.
+
+
+in addition to numerical values, the flex-grow property also supports the inherit and initial keywords.
+
+inherit: When flex-grow: inherit; is applied to a flex item, it inherits the flex-grow value from its parent flex container. It ensures that the flex item behaves the same way as its parent in terms of growing with available space.
+
+initial: The flex-grow: initial; value resets the flex-grow property to its default value of 0. It means the flex item will not grow with available space by default.
+
+Using numerical values for flex-grow allows you to specify the growth factor for individual flex items. Positive numerical values distribute the available space based on their ratios, while a value of 0 prevents the item from growing.
+
+On the other hand, inherit allows the flex item to inherit the flex-grow value from its parent, and initial resets the flex-grow property to its default value.
+
+
+
+
+
+
+
+
+
+
+/*      *** flex shrink ***  video 4 ***    */
+
+similar to flex grow but opposite growth rate for when the browser gets smaller. works well when designing layout for large screen then scaling down
+
+
+when 1st applied on larger screens there isn'y a difference. if flex-grow 1 is set in the box element without flex-shrink added then the containers will shrink at different rates.
+
+setting flex rates to 1,2, 3. the containers will shrink at the rate defined. the bigger the # the larger the shrink
+
+shrinking is relative to each element
+
+Additional Info: 
+The flex-shrink property is used in flexbox to control how flex items shrink when there is not enough space available within the flex container.
+
+The flex-shrink property accepts a numeric value as its argument. Here are the different options for flex-shrink:
+
+Positive numeric values: Setting flex-shrink to a positive number determines the relative shrinking factor of the flex item compared to other flex items. For example, if one item has flex-shrink: 2 and another item has flex-shrink: 1, the first item will shrink twice as much as the second item when there is insufficient space.
+
+Zero: Assigning flex-shrink: 0 means the flex item will not shrink and will maintain its original size, even if there is not enough space to accommodate all flex items.
+
+Negative values: Negative values for flex-shrink are invalid and will have no effect.
+
+Here's an example that demonstrates the usage of flex-shrink:
+
+.container {
+  display: flex;
+}
+
+.item1 {
+  flex-shrink: 2;
+}
+
+.item2 {
+  flex-shrink: 1;
+}
+
+.item3 {
+  flex-shrink: 0;
+}
+
+In this example, item1 will shrink twice as much as item2 because it has a flex-shrink value of 2. item3 will not shrink because its flex-shrink value is set to 0.
+
+
+
+
+
+
+
+
+
+
+/*      *** flex wrap ***  video 5 ***    */
+prevents the items from running off the page or disappearing completely when a min-width is set. when you hit the minimum-width wrap to the next line. creates very responsive layouts with no media query.
+    
+    wrap-reverse = last element goes above the other elements the elements continue to go above
+
+
+
+Additional Info: 
+The flex-wrap property in flexbox controls whether flex items should wrap or not when they exceed the width of the flex container along the main axis.
+
+The flex-wrap property accepts the following values:
+
+nowrap: The default value. Flex items will remain on a single line and may overflow the container if there isn't enough space.
+
+wrap: Flex items will wrap onto multiple lines if necessary to fit within the container's width. The items will start a new line, stacking vertically.
+
+wrap-reverse: Flex items will wrap onto multiple lines, but in reverse order. The items will start a new line, stacking vertically in the opposite order.
+
+The flex-wrap property does not accept numerical values. Instead, it accepts keyword values as listed above.
+
+Regarding inheritance, flex-wrap can be set to inherit to inherit the value from the parent container, or initial to reset it to the initial value.
+
+In terms of best practices, the use of flex-wrap depends on the specific layout requirements. It is often used in combination with other flex properties to create responsive layouts. When designing responsive webpages, flex-wrap can be valuable in handling flex items that need to wrap onto multiple lines or adjust their layout dynamically based on available space.
+
+By utilizing flex-wrap appropriately, it is possible to build fluid and responsive designs that adapt well to different screen sizes and orientations. However, it's important to consider the overall design and content flow to ensure that wrapping flex items do not cause undesirable visual or functional issues.
+
+
+
+
+
+/*      *** flex basis ***  video 6 ***    */
+
+
+
+
+
+Additional Info: 
+The `flex-basis` property in flexbox is used to set the initial size of a flex item along the main axis before any remaining space is distributed. It specifies the ideal size of the flex item, which can be a length value or one of the following keywords:
+
+1. `auto`: This is the default value. The initial size of the flex item is determined by its content, and it can grow or shrink based on the available space and the flex container's rules.
+
+2. Length values: You can use specific length values (e.g., `px`, `rem`, `em`) to set a fixed initial size for the flex item. For example, `flex-basis: 200px;` sets the initial width (or height, depending on the flex-direction) of the flex item to 200 pixels.
+
+The `flex-basis` property does not accept `inherit` or `initial` as values. Instead, it takes either a length value or the keyword `auto`.
+
+Here's an example that demonstrates the usage of `flex-basis`:
+
+CSS file
+.container {
+  display: flex;
+}
+
+.item {
+  flex-basis: 200px;
+}
+
+
+In this example, all flex items with the class `.item` will have an initial width of 200 pixels (assuming the flex container's `flex-direction` is set to row). The flex items can grow or shrink based on the available space and the flex container's rules.
+
+The `flex-basis` property is commonly used in conjunction with `flex-grow` and `flex-shrink` to control the sizing and behavior of flex items within a flex container.
+
+
+
+
+
+
+
+/*      ***  creating a menu with flexbox ***  video 7 ***    */
+
+create a example #1 folder creates a sample of basic menu with media queries for responsiveness
+
+
+
+
+Additional Info: 
+Flexbox is an excellent choice for creating menus due to its flexible and powerful layout capabilities. Here's an example of creating a horizontal menu using flexbox:
+
+HTML:
+<nav class="menu">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+CSS:
+.menu {
+  display: flex;
+  justify-content: center; /* Horizontally centers the menu items */
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.menu a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #ccc;
+}
+
+In this example, we create a <nav> element with a class of "menu" to serve as the menu container. We apply flexbox to the menu container using display: flex, which enables flexible item arrangement.
+
+The justify-content: center property centers the menu items horizontally within the menu container.
+
+Each menu item is represented by an <a> element. We style the menu items with padding, text decoration, and color properties. On hover, the menu items change their background color for visual feedback.
+
+By leveraging flexbox, you can easily adjust the alignment, spacing, and other properties of the menu items to achieve your desired menu layout.
+
+
+
+
+
+/*      *** creating a nested menu with flexbox ***  video 8 ***    */
+
+creates a 2nd menu list that is seperate from the 1st for styling purposes
+
+
+
+Additional Info: 
+ Creating a nested menu with flexbox involves applying flexbox properties to both the parent menu and its submenus. Here's an example of a nested menu using flexbox:
+
+HTML:
+<nav class="menu">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <div class="submenu">
+    <a href="#">Services</a>
+    <div class="nested-menu">
+      <a href="#">Service 1</a>
+      <a href="#">Service 2</a>
+      <a href="#">Service 3</a>
+    </div>
+  </div>
+  <a href="#">Contact</a>
+</nav>
+
+CSS:
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.menu a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #ccc;
+}
+
+.submenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu:hover .nested-menu {
+  display: flex;
+}
+
+.nested-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.nested-menu a {
+  padding: 10px;
+}
+
+In this example, we've added a nested submenu under the "Services" menu item. The submenu is represented by a <div> element with a class of "submenu". The nested menu items are contained within a <div> element with a class of "nested-menu".
+
+We use flexbox properties to control the layout and behavior of the nested menu. The parent submenu has display: flex and flex-direction: column, making its nested items stack vertically. The nested menu is initially hidden (display: none) and appears when hovering over the parent submenu using the selector .submenu:hover .nested-menu.
+
+The nested menu is positioned absolutely relative to its parent submenu using position: absolute. The top: 100% and left: 0 properties ensure it appears below and aligned with the parent submenu.
+
+Feel free to modify the styling and expand the nested menu structure as per your requirements.
+
+
+
+When styling nested menus using flexbox, there are several additional options you can explore to enhance the visual appearance and functionality. Here are a few examples:
+
+Adjusting Alignment: You can use flexbox alignment properties to control the alignment of the nested menu items within the submenu. For example, you can use justify-content to horizontally align the items and align-items to vertically align them.
+
+Changing Layout Orientation: By modifying the flex-direction property of the nested menu, you can change the layout orientation from the default vertical stacking to horizontal or other desired configurations. This allows for more flexibility in how the nested menu items are displayed.
+
+Adding Transitions and Animations: You can apply transitions or animations to create smooth and visually appealing effects when showing or hiding the nested menu. This can be done by targeting the appropriate CSS properties, such as opacity, transform, or height, and defining transition or animation rules.
+
+Styling Active or Hovered Items: Apply different styles to the active or hovered nested menu items to provide visual feedback to the user. For example, you can change the background color, font color, or add underline/border to indicate the current selection.
+
+Customizing Indicators: Add custom indicators or icons to visually indicate the presence of nested menus. For instance, you can use arrow icons or expand/collapse icons to signify the expandable nature of the nested menu items.
+
+Nested Submenus: Extend the nested menu concept by adding further levels of submenus. Apply similar styling and positioning techniques to create a multi-level nested menu structure.
+
+Remember, these options provide a starting point, and the exact styling choices will depend on your design goals and overall visual aesthetic. Flexbox offers great flexibility in designing nested menus, allowing you to create dynamic and interactive menu structures.
+
+
+
+
+
+/*      *** Flow Axis ***  video 9 ***    */
+
+ /*flex-flow: row, column, reverse-column or reverse-row video #9  *** 
+    changes the direction of the axis 
+        flex-flow: row; = main axis = horizontal (left to right), cross axis = vertical (top to bottom)
+        flex-flow: column; = main axis = vertical (top to bottom) , cross axis = horizontal (left to right)
+        
+        certain properties only apply to cross axis ex= justify content
+        */
+        
+        /*
+        flex-flow:column;
+        justify-content: flex-end; */
+            /*flex-end= bottom of page, flex-start=top of page, flex- center = center of page /*
+        fills the entire page so it doesn't work except on a main axis of horizontal */
+
+         /* flex-flow: row-reverse; reverses row */
+        /* flex-flow: column-reverse;  reverses column */
+
+Additional Info: 
+In flexbox, there are two main axes that define the layout and alignment of flex items within a flex container: the main axis and the cross axis.
+
+1. **Main Axis**: The main axis runs in the direction determined by the `flex-direction` property. It can be horizontal (`row` or `row-reverse`) or vertical (`column` or `column-reverse`). By default, the main axis is horizontal (`row`), and flex items are laid out in a row from left to right.
+
+2. **Cross Axis**: The cross axis is perpendicular to the main axis. It is determined by the opposite direction of the `flex-direction` property. If the main axis is horizontal, the cross axis is vertical, and vice versa. The cross axis is used for aligning flex items along the perpendicular axis.
+
+Here's a breakdown of the main axis and cross axis for different `flex-direction` values:
+
+- **`flex-direction: row`**: The main axis is horizontal, from left to right. The cross axis is vertical, from top to bottom.
+
+- **`flex-direction: row-reverse`**: The main axis is horizontal, but the direction is reversed, so it goes from right to left. The cross axis remains vertical, from top to bottom.
+
+- **`flex-direction: column`**: The main axis is vertical, from top to bottom. The cross axis is horizontal, from left to right.
+
+- **`flex-direction: column-reverse`**: The main axis is vertical, but the direction is reversed, so it goes from bottom to top. The cross axis remains horizontal, from left to right.
+
+Understanding the main axis and cross axis is crucial for controlling the layout and alignment of flex items using properties like `justify-content`, `align-items`, `align-self`, and `align-content`. These properties allow you to position flex items along the main and cross axes to achieve the desired layout and alignment within a flex container.
+
+
+
+
+
+
+
+
+/*      *** Align Items on the Cross Axis - Flexbox ***  video 10 ***    */
+
+    justify-content: center;
+    /* aligns parent container in the main axis with declared value, ex center, left, right */
+    
+    align-items: center;
+    /* aligns parent container in the cross axis with declared value, ex center, flex-end*/
+
+
+Additional Info: 
+I apologize, but as a text-based AI model, I don't have the ability to access or view specific videos or their content. However, I can provide you with an explanation of aligning items on the cross axis in flexbox.
+
+Aligning items on the cross axis in flexbox is done using the `align-items` property. It controls how flex items are positioned vertically within the flex container. Here's an overview of the `align-items` property:
+
+- `align-items: flex-start`: Aligns flex items at the start of the cross axis. For a horizontal main axis, this aligns items to the top; for a vertical main axis, it aligns items to the left.
+
+- `align-items: flex-end`: Aligns flex items at the end of the cross axis. For a horizontal main axis, this aligns items to the bottom; for a vertical main axis, it aligns items to the right.
+
+- `align-items: center`: Aligns flex items at the center of the cross axis.
+
+- `align-items: stretch`: Stretches flex items to fill the entire cross axis. This is the default value.
+
+- `align-items: baseline`: Aligns flex items such that their baselines are aligned. This is useful when dealing with text or elements of different font sizes.
+
+You can apply the `align-items` property to the flex container, and it will affect all the flex items within it. Each flex item will align itself based on the specified value.
+
+Here's an example demonstrating the usage of `align-items`:
+
+CSS:
+.container {
+  display: flex;
+  align-items: center; /* Align items at the center of the cross axis */
+}
+
+
+In this example, the flex container with the class `.container` will align its flex items vertically at the center of the cross axis.
+
+
+
+
+
+
+
+
+
+
+/*   ex#3 file   *** Grid vs Stacked Layout Example - flexbox  ***  video 11 ***    */
+
+create a link for a usaer to choose between grid and stacked.
+
+
+
+Additional Info: 
+
+Sure! Here's an example that illustrates the difference between a grid layout and a stacked layout using both CSS Grid and flexbox.
+
+HTML:
+<div class="grid-layout">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div>
+
+<div class="stacked-layout">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div>
+```
+
+CSS (Grid Layout):
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.stacked-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+```
+
+In the above example, we have two layouts: a grid layout and a stacked layout.
+
+The grid layout uses CSS Grid with `display: grid` and `grid-template-columns` to define a grid with three equal columns. The `grid-gap` property adds a 10px gap between grid cells. Each item is placed inside the grid using the `.item` class.
+
+The stacked layout uses flexbox with `display: flex` and `flex-direction: column` to stack the items vertically. By setting the flex direction to column, the items will be placed on top of each other in a single column.
+
+Both layouts share the same HTML structure and `.item` class, but the CSS properties applied to the parent containers create the different layout behaviors.
+
+You can further customize the styles and adjust the grid or stacking behavior to fit your specific design requirements.
+
+
+
+Pros & cons of each, when to use: 
+
+Grid Layout Pros:
+- Grid layout provides precise control over the placement and sizing of elements in both rows and columns.
+- It allows for complex, multi-dimensional layouts with ease.
+- Grid layout is well-suited for creating responsive designs as it offers flexible positioning and resizing options.
+- It supports alignment, distribution, and overlapping of elements.
+- Grid layout simplifies the creation of consistent and symmetrical designs.
+- It is particularly useful for designing grid-based interfaces like dashboards or tabular data displays.
+
+Grid Layout Cons:
+- Grid layout has limited browser support in older versions, so you may need to consider fallback options or polyfills for compatibility.
+- Understanding and implementing complex grid layouts can require a learning curve.
+
+Stacked Layout Pros:
+- Stacked layout is simple and easy to understand, making it quick to implement.
+- It works well for linear content flow, such as blog posts, articles, or single-column interfaces.
+- Stacked layout is highly adaptable and can be easily adjusted for different screen sizes and orientations.
+- It has excellent browser support, including older versions.
+
+Stacked Layout Cons:
+- Stacked layout may not be suitable for complex multi-column or grid-based designs.
+- It may require additional styling or adjustments to achieve desired spacing and alignment.
+- Stacked layout can result in longer scrolling if there is a significant amount of content.
+
+When to use Grid Layout:
+- Use Grid layout when you need precise control over the positioning and sizing of elements in a grid structure.
+- Use it for complex layouts that require multiple rows and columns.
+- Use Grid layout for creating responsive designs that adapt to different screen sizes and orientations.
+- Consider Grid layout for grid-based interfaces, such as dashboards or data displays.
+
+When to use Stacked Layout:
+- Use Stacked layout for simple, linear content flow, such as blog posts, articles, or single-column interfaces.
+- Use it when you prioritize simplicity and quick implementation.
+- Stacked layout works well for designs with a small amount of content that doesn't require complex organization.
+- Consider Stacked layout when browser compatibility is a concern or when working with older browser versions.
+
+In many cases, a combination of both layout approaches may be beneficial, utilizing the strengths of each to achieve the desired design goals.
+
+
+
+
+
+
+
+
+
+
+
+/*      *** Element Order - Flexbox ***  video 12 ***    */
+
+In flexbox, the order of elements can be controlled using the `order` property. By default, flex items have an `order` value of 0, and they appear in the order they appear in the source HTML markup. However, you can modify the order by assigning different values to the `order` property.
+
+The `order` property accepts integer values, both positive and negative. Elements with a lower `order` value will appear before elements with a higher `order` value. If multiple elements have the same `order` value, they will appear in the order they appear in the source markup.
+
+Here's an example to demonstrate the usage of the `order` property:
+
+HTML:
+<div class="container">
+  <div class="item" style="order: 2;">Item 1</div>
+  <div class="item" style="order: 1;">Item 2</div>
+  <div class="item" style="order: 3;">Item 3</div>
+</div>
+```
+
+In the above example, three flex items are placed inside a container. By setting different `order` values, we can control their order of appearance. In this case, "Item 2" will appear first because it has the lowest `order` value of 1, followed by "Item 1" with `order` value of 2, and finally "Item 3" with `order` value of 3.
+
+By adjusting the `order` property, you can change the visual order of flex items without modifying the HTML structure. This provides flexibility in rearranging elements within a flex container to achieve the desired layout and presentation.
+
+
+
+

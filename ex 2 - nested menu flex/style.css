@@ -1,0 +1,117 @@
+/*  creating a nested menu with Flex    */
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/* 1st menu base styles     */
+
+nav {
+    background: #333;
+}
+
+nav ul {
+    /* targets ul in nav specifically */
+    list-style-type: none;
+    /* removes bullets or whatever style is auto displayed  */
+    padding: 0;
+}
+
+/* style links themselves */
+nav a {
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    display: block;
+    padding: 10px;
+}
+
+/* when pointer hovers */
+nav a.hover {
+    background-color: #555;
+}
+
+/* base styles social media - nested list */
+a.tw {
+    background: url(img/tw.png) no-repeat center;
+    background-size: 88%;
+ 
+}
+
+a.fb {
+    background: url(img/fb.png) no-repeat center;
+    background-size: 100%;
+    
+}
+
+.social a { /* grabs both a tags in social class */
+
+    text-indent: -10000px; /* shoots the text off the page so only the images are left */
+    /* makes the flex items size shrink so it has to be addressed*/
+}
+
+.social {
+    max-width: 80px;
+    /* doesn't look right on smaller screens add margin */
+    margin: 0 auto;
+}
+
+/* flex styles in response to text-indent */
+nav ul.social {
+    flex: 1, 1, 0;
+    /*  makes them too large so max-width must be set in .social class above */
+    display: flex;
+    /*adjust size for smaller screens */
+}
+
+nav ul.social li {
+    /* makes social list items flex  */
+    flex: 1 1 0;
+}
+
+
+
+
+
+
+
+
+/*  flex styles  */
+
+@media screen and (min-width:768px) {
+
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+        /* center, flex-end, flex-start, space-around, space-between */
+    }
+
+    nav li {
+        flex: 1 1 0;
+        /* flex grow list items */
+    }
+
+    /*   default behavior before adding css styleing for class social is the continue the ul of the 1st menu and STACK LEFT TO RIGHT  nav adjust*/
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        /* creates space between the 2 lists in the menu */
+    }
+
+   .social {
+        margin: 0;
+
+    }
+}

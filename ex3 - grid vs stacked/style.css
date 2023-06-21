@@ -1,0 +1,134 @@
+/*  creating a nested menu with Flex    */
+* {
+    font-family: verdana;
+    margin: 0;
+}
+
+body {
+    background: #eee;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/* 1st menu base styles     */
+nav {
+    background: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* style links themselves */
+nav a {
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    display: block;
+    padding: 10px;
+}
+
+/* when pointer hovers */
+nav a.hover {
+    background-color: #555;
+}
+
+/* base styles social media - nested list */
+a.tw {
+    background: url(img/tw.png) no-repeat center;
+    background-size: 88%;
+}
+
+a.fb {
+    background: url(img/fb.png) no-repeat center;
+    background-size: 100%;
+
+}
+
+.social a {
+    text-indent: -10000px;
+}
+
+.social {
+    max-width: 80px;
+    margin: 0 auto;
+}
+
+/* grid -vs- flex base styles - video #11  */
+
+#blocks {
+    margin: 20px;
+}
+
+article {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+article h2 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+
+}
+
+
+
+/* flex styles */
+nav ul.social {
+    flex: 1, 1, 0;
+    display: flex;
+}
+
+nav ul.social li{
+    flex: 1 1 0;
+}
+
+
+/*  flex styles - media query */
+@media screen and (min-width:768px) {
+
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    nav li{
+        flex: 1 1 0;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .social{
+        margin: 0;
+    }
+
+    /* create a grid for screens over 768 px */
+    #blocks{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* 4% space left over after article flex. creates a space between the articles */
+    }
+
+    article{
+        flex: 0 1 32%;
+        transition: flex-basis 0.2s linear;
+    }
+
+    article.stack {
+        /* for jquery */
+        flex: 0 1 100%;
+    }
+}

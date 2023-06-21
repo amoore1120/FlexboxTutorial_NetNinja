@@ -1,0 +1,55 @@
+/*  creating a menu with Flex    */
+
+*{
+
+}
+
+body{
+
+}
+
+.wrapper{
+    width:100%;
+    max-width:960px;
+    margin: 0 auto;
+}
+
+
+/* menu base styles     */
+
+nav{
+    background: #333;
+}
+
+nav ul{ /* targets ul in nav specifically */
+    list-style-type: none; /* removes bullets or whatever style is auto displayed  */
+    padding: 0 ;
+} 
+
+/* style links themselves */
+nav a  {
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    display: block;
+    padding: 10px;
+}  
+
+/* when pointer hovers */ 
+nav a.hover{
+    background-color: #555;
+}
+
+/*  flex styles for larger screens */
+
+@media screen and (min-width:768px){
+
+    nav ul{
+        display: flex;
+        justify-content: flex-start;/* center, flex-end, flex-start, space-around, space-between */
+    }
+
+    nav li{
+        flex: 1 1 0;    /* flex grow list items */
+    }
+}

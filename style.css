@@ -1,34 +1,103 @@
-*{
+/*    * selector targets all elements on the page and sets the font-family to "Verdana" for consistency. Additionally, it removes any default margin applied to elements, ensuring a consistent spacing behavior. */
+* {
     font-family: verdana;
     margin: 0;
 }
 
-body{
+/*    body selector styles the <body> element and sets its background color to #eee, which represents a light gray color. */
+body {
     background: #eee;
 }
 
-.wrapper{
+
+/*      .wrapper selector styles an element with the class "wrapper." It sets the width to 100% of its container, ensuring it spans the entire available width. The max-width property restricts the width of the element to a maximum of 960 pixels. The margin property sets the top and bottom margin to 0, and the left and right margins to "auto," which centers the element horizontally within its parent container.
+
+Overall, this CSS code establishes a consistent font family, sets a light gray background for the page, and creates a wrapper element that spans the full width of its container with a maximum width of 960 pixels.   */
+
+.wrapper {
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.flex-container{
+/*  styles the parent element   */
+.flex-container {
     display: flex;
+    /* CREATES THE FLEXBOX CONTAINER. default behavior is to stack left to right */
+    background-color: white;
+    height: 800px;
+    flex-wrap: wrap;
+    Flex-flow: row; 
+    /*  video #9    flex-flow: row, column, reverse-column or reverse-row   *** 
+    changes the direction of the axis 
+    flex-flow: row; = main axis = horizontal (left to right), cross axis = vertical (top to bottom)
+    flex-flow: column; = main axis = vertical (top to bottom) , cross axis = horizontal (left to right)*/
+    
+    justify-content: center;
+    /* aligns parent container in the main axis with declared value, ex center, left, right */
+    
+    align-items: center;
+    /* aligns parent container in the cross axis with declared value, ex center, flex-end*/
 }
 
-box{
-    height: 100px ;
-    min-width: 100px;
+/* Styles the boxes */
+.box {
+    height: 100px;
+    flex: 0 0 100px;
+    /* easiest way & best practice of using flex
+   1st # = flex-grow, 2nd # = flex-shrink, 3rd = flex-basis  video#6 */
+
+    /* min-width: 200px;  set the min width of each child container */
+
+
+    /*flex-grow:1;    video 3 -  each container grows to evenly fill the availanle room in a container equally. set the min-width for the min possible size, use flex-grow rate determine size of larger screen  */
+
+    /*flex-wrap: wrap;  prevents the items from running off the page or disappearing completely when a min-width is set. when you hit the minimum-width wrap to the next line. creates very responsive layouts with no media query.
+    
+    wrap-reverse = last element goes above the other elements the elements continue to go above   */
+
+    /* flex-basis:200px;  video #6 similar to min-width, defines a starting width of each of our elements. instead of min-width use flex-basis and set it with the same value as min-width, 200px in this example. flex-basis can be given to each indivual element or make evertyhing the same by using the flex-basis in the class or id of the parent element. Since we  set each child to a different flex-basis they will be different sizes based on their starting value */
+
+    /* flex-basis vs min-width = 
+        apply a min-width of each in the .box class (parent element) to 500 px. the containers will have a starting position of a stacked wrap because there isn't enough room for 500px in browser size. when shrinking below 500px a scroll bar will appear at the bottom. 
+        \
+        if flex-basis of 500px once the screen is below 500px they will shrink like normal flex-items 
+
+        flex-basis is often perferred over min-width due to responsiveness
+    */
+
+
 }
+
+
+
+
+/* styles the indiviual containers */
 .one {
     background: red;
+    /*flex-grow: 1;      if box one is given the property of flex-grow 1 then box 2 & 3 take on the properties set in the .box element of height and width 100px, red fills the remainder of the flex container */
+
+    /*   flex-shrink: 1:        video 3 - opposite of flex grow. may be useful when designing full size webpage to mobile responsiveness    */
+
+    /* flex-basis: 100px; */
+
 }
 
 .two {
     background: blue;
+    /*  flex-grow: 2;    flex-grow 2 = grows at double the rate while box 3 keeps the .box properties and box 1 flex- grow 1. box 2 is largerest, then box 1 then box 3 */
+
+    /*flex-shrink: 2;    video 3 */
+
+    /* flex-basis: 200px;   video 6*/
 }
 
 .three {
     background: green;
+
+    /* flex-shrink: 3:     video 3 */
+
+    /*flex-basis: 300px;   video 6*/
 }
+
+/*      */
